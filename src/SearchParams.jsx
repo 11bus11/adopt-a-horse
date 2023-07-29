@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 const BREEDS = ["icelandic", "fjord", "arabic", "shetland"];
+const COLOURS = ["brown", "black", "white"]
 
 const SearchParams = () => {
     const [location, setLocation] = useState("");
     const [breed, setBreed] = useState("");
+    const [colour, setColour] = useState("");
+    
+
+    
+
     return (
         <div className="search-params">
             <form>
@@ -26,8 +32,24 @@ const SearchParams = () => {
                         ))}
                     </select>
                 </label>
+                <label htmlFor="colour">
+                    Colour
+                    <select
+                        id="colour"
+                        value={colour}
+                        onChange={(e) => {
+                            setColour(e.target.value);
+                        }}
+                    >
+                        <option />
+                        {COLOURS.map(colour => (
+                            <option key={colour}>{colour}</option>
+                        ))}
+                    </select>
+                </label>
                 <button>Submit</button>
             </form>
+            
         </div>
     )
 }
