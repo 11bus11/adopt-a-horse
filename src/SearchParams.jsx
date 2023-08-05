@@ -11,7 +11,7 @@ const SearchParams = () => {
 
   useEffect(() => {
     requestPets();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   async function requestPets() {
     const res = await fetch(
@@ -24,7 +24,10 @@ const SearchParams = () => {
 
   return (
     <div className="search-params">
-      <form>
+      <form onSubmit={e => {
+        e.preventDefault();
+        requestPets();
+        }}>
         <label htmlFor="location">
           Location
           <input
