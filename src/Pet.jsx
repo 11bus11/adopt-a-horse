@@ -14,6 +14,7 @@ const Pet = (props) => {
       <div className="info">
         <h1>{name}</h1>
         <h2>{`${animal} — ${breed} — ${location}`}</h2>
+        <hr />
       </div>
     </a>
   );
