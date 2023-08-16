@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
+import fetchSearch from "./fetchSearch";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
+  const [requestParams, setRequestParams] = useState({
+    location:"",
+    animal:"",
+    breed:"",
+  })
   const [pets, setPets] = useState([]);
-  const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
-  const [breed, setBreed] = useState("");
   const [breeds] = useBreedList(animal);
 
   useEffect(() => {
