@@ -1,14 +1,14 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
-class ErrorBoundry extends Component {
+class ErrorBoundary extends Component {
     state = { hasError: false };
     static getDerivedStateFromError() {
         return { hasError: true }
     }
 
     componentDidCatch(error, info) {
-        console.error("ErrorBoundry caught error!", error, info);
+        console.error("ErrorBoundary caught error!", error, info);
     }
 
     render() {
@@ -25,4 +25,4 @@ class ErrorBoundry extends Component {
     }
 }
 
-export default ErrorBoundry;
+export default ErrorBoundary;

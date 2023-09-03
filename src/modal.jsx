@@ -1,20 +1,20 @@
-import { useEffec, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-const Modal ({ children }) => {
-    const elref = useRef(null);
-    if (!elref.current) {
-        elref.current = document.createElement('div');
+const Modal = ({ children }) => {
+    const elRef = useRef(null);
+    if (!elRef.current) {
+        elRef.current = document.createElement("div");
     }
 
     useEffect(() => {
         const modalRoot = document.getElementById("modal");
-        modalRoot.appendChild(elref.current);
+        modalRoot.appendChild(elRef.current);
 
-        return () => modalRoot.removeChild(elref.current);
+        return () => modalRoot.removeChild(elRef.current);
     }, []);
 
-    return createPortal(<div>{children}</div>, elref.current)
+    return createPortal(<div>{children}</div>, elRef.current);
 }
 
 export default Modal;
