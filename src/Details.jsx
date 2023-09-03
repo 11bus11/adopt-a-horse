@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import ErrorBoundry from "./ErrorBoundry";
 import Carousel from "./Carousel";
