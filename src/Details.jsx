@@ -33,4 +33,12 @@ const Details = () => {
     );
 };
 
-export default Details;
+function DetailsErrorBoundry(props) {
+    return (
+        <ErrorBoundry>
+            <Details {...props} />
+        </ErrorBoundry>
+    )
+}
+
+export default DetailsErrorBoundry;
