@@ -62,3 +62,8 @@ img {
     display: inline-block;
     margin-right: 15px;
   }
+
+  .adopted-image {
+    width: 10%;
+    border-radius: 50%;
+  }
